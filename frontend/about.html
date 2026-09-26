@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — FINNEWS AI (Financial News Simplifier)</title>
+  <meta name="description" content="Learn about FinNews AI architecture, tech stack, and how LLMs convert financial news jargon into plain language." />
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .architecture-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2.5rem 0;
+      padding: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+    }
+    .flow-node {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-highlight);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      min-width: 140px;
+    }
+    .flow-node-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    .flow-node-subtitle {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+    .flow-arrow {
+      color: var(--accent-primary);
+      font-size: 1.2rem;
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .tech-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+    .tech-title {
+      font-weight: 700;
+      color: var(--accent-primary);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="logo-text">FINNEWS <span>AI</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#news-section" class="nav-link">Latest News</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="btn-theme-toggle" class="btn-icon" aria-label="Toggle dark/light theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <a href="index.html" class="btn-primary" style="padding: 0.55rem 1.1rem; font-size: 0.875rem;">
+          <i class="fa-solid fa-arrow-left"></i> <span>Back to News</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Main Content -->
+  <main class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+    <div style="max-width: 900px; margin: 0 auto;">
+      
+      <div class="hero-badge">
+        <i class="fa-solid fa-circle-info"></i> Project Documentation
+      </div>
+
+      <h1 class="hero-title" style="text-align: left; margin-bottom: 1.5rem;">
+        About <span class="hero-title-gradient">FinNews AI</span>
+      </h1>
+
+      <div style="font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 2.5rem;">
+        <p style="margin-bottom: 1.25rem;">
+          <strong>FinNews AI</strong> is an artificial-intelligence powered financial news platform built to solve a universal problem: <em>financial jargon overload</em>.
+        </p>
+        <p>
+          Every day, major financial publications publish articles filled with complex acronyms (CPI, FOMC, WTI, H100), dense accounting terms (gross margins, basis points, yields), and obscure central bank language. FinNews AI acts as an instant translator, distilling complex financial events into clear takeaways, key numbers, and beginner-friendly vocabulary.
+        </p>
+      </div>
+
+      <!-- Architecture Section -->
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-bottom: 1rem;">
+        <i class="fa-solid fa-sitemap" style="color: var(--accent-primary);"></i> System Architecture Flow
+      </h2>
+      <p style="color: var(--text-secondary);">
+        FinNews AI employs a decoupled, asynchronous micro-architecture for optimal speed and reliability:
+      </p>
+
+      <div class="architecture-flow">
+        <div class="flow-node">
+          <div class="flow-node-title"><i class="fa-solid fa-user"></i> User</div>
+          <div class="flow-node-subtitle">Web Browser</div>
+        </div>
+        <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="flow-node">
+          <div class="flow-node-title"><i class="fa-brands fa-js"></i> Frontend</div>
+          <div class="flow-node-subtitle">Vanilla JS & CSS</div>
+        </div>
+        <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="flow-node">
+          <div class="flow-node-title"><i class="fa-solid fa-server"></i> FastAPI</div>
+          <div class="flow-node-subtitle">Python Async Backend</div>
+        </div>
+        <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="flow-node">
+          <div class="flow-node-title"><i class="fa-solid fa-newspaper"></i> NewsAPI</div>
+          <div class="flow-node-subtitle">Financial Press Feed</div>
+        </div>
+        <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="flow-node">
+          <div class="flow-node-title"><i class="fa-solid fa-brain"></i> Groq LLM</div>
+          <div class="flow-node-subtitle">Llama 3.3 70B</div>
+        </div>
+        <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="flow-node">
+          <div class="flow-node-title"><i class="fa-solid fa-display"></i> Dashboard</div>
+          <div class="flow-node-subtitle">Simplified Cards</div>
+        </div>
+      </div>
+
+      <!-- Tech Stack Section -->
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-top: 3rem; margin-bottom: 1rem;">
+        <i class="fa-solid fa-layer-group" style="color: var(--accent-primary);"></i> Technology Stack
+      </h2>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-title"><i class="fa-brands fa-python"></i> Python 3.12+</div>
+          <p style="font-size: 0.875rem; color: var(--text-secondary);">High-performance asynchronous backend logic and orchestration.</p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-title"><i class="fa-solid fa-bolt"></i> FastAPI & Uvicorn</div>
+          <p style="font-size: 0.875rem; color: var(--text-secondary);">Modern REST API framework featuring auto OpenAPI documentation (/docs).</p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-title"><i class="fa-solid fa-brain"></i> Groq & Llama 3.3 70B</div>
+          <p style="font-size: 0.875rem; color: var(--text-secondary);">Ultra-fast LLM inference engine generating plain-English summaries.</p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-title"><i class="fa-solid fa-newspaper"></i> NewsAPI</div>
+          <p style="font-size: 0.875rem; color: var(--text-secondary);">Global news aggregator API providing real-time financial articles.</p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-title"><i class="fa-brands fa-js"></i> Vanilla JavaScript (ES6+)</div>
+          <p style="font-size: 0.875rem; color: var(--text-secondary);">Lightweight, dependency-free frontend client using modular functions.</p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-title"><i class="fa-brands fa-css3-alt"></i> Modern CSS3</div>
+          <p style="font-size: 0.875rem; color: var(--text-secondary);">Custom fintech design system supporting Dark & Light themes and glassmorphism.</p>
+        </div>
+      </div>
+
+      <!-- Financial Disclaimer Box -->
+      <div class="disclaimer-banner" style="margin-top: 3rem; padding: 1.25rem; font-size: 0.9rem; text-align: left; justify-content: flex-start; gap: 0.8rem;">
+        <i class="fa-solid fa-shield-halved" style="font-size: 1.5rem; flex-shrink: 0; color: var(--accent-amber);"></i>
+        <div>
+          <strong style="color: var(--text-primary); display: block; margin-bottom: 0.25rem;">Financial Disclaimer</strong>
+          FinNews AI is an educational project created for informational and simplifying purposes only. None of the AI-generated summaries, key points, or definitions constitute financial, investment, tax, or legal advice. Always perform independent research or consult a certified financial advisor before making investment decisions.
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 FINNEWS AI — Financial News Simplifier. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/ui.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      UI.initTheme();
+      const themeBtn = document.getElementById('btn-theme-toggle');
+      if (themeBtn) themeBtn.addEventListener('click', UI.toggleTheme);
+    });
+  </script>
+</body>
+</html>
